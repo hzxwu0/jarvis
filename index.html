@@ -9,13 +9,13 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#020c14;color:#c8eaf5;font-family:'Noto Sans KR',sans-serif;height:100vh;overflow:hidden;display:flex;flex-direction:column}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
-header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid rgba(0,212,255,0.2);background:rgba(2,12,20,0.9);flex-shrink:0}
-.logo{font-family:monospace;font-weight:900;font-size:20px;color:#00d4ff;letter-spacing:6px;text-shadow:0 0 20px rgba(0,212,255,0.4)}
+header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-bottom:1px solid rgba(0,212,255,0.2);background:rgba(2,12,20,0.9);flex-shrink:0}
+.logo{font-family:monospace;font-weight:900;font-size:18px;color:#00d4ff;letter-spacing:6px;text-shadow:0 0 20px rgba(0,212,255,0.4)}
 .logo span{font-size:9px;color:rgba(200,234,245,0.35);letter-spacing:3px;display:block;margin-top:2px}
-.sb{display:flex;align-items:center;gap:10px;font-family:monospace;font-size:11px;color:rgba(200,234,245,0.4)}
-.dot{width:7px;height:7px;border-radius:50%;background:#00ffaa;box-shadow:0 0 8px #00ffaa;animation:pulse 2s infinite}
+.sb{display:flex;align-items:center;gap:8px;font-family:monospace;font-size:11px;color:rgba(200,234,245,0.4)}
+.dot{width:7px;height:7px;border-radius:50%;background:#00ffaa;box-shadow:0 0 8px #00ffaa;animation:pulse 2s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-#chat{flex:1;overflow-y:auto;padding:18px 28px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:5;scrollbar-width:thin;scrollbar-color:#0090cc transparent}
+#chat{flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:5;scrollbar-width:thin;scrollbar-color:#0090cc transparent}
 .msg{display:flex;gap:10px;max-width:840px;animation:fadeIn 0.3s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .msg.user{align-self:flex-end;flex-direction:row-reverse}
@@ -26,12 +26,12 @@ header{position:relative;z-index:10;display:flex;align-items:center;justify-cont
 .jarvis .bl{background:#041624;border:1px solid rgba(0,212,255,0.18);border-left:3px solid #00d4ff}
 .user .bl{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-right:3px solid rgba(255,255,255,0.2);text-align:right}
 .lbl{font-family:monospace;font-size:9px;letter-spacing:2px;margin-bottom:3px}
-.jarvis .lbl{color:#00d4ff}
-.user .lbl{color:rgba(200,234,245,0.4);text-align:right}
+.jarvis .lbl{color:#00d4ff}.user .lbl{color:rgba(200,234,245,0.4);text-align:right}
 .dots span{display:inline-block;width:4px;height:4px;border-radius:50%;background:#00d4ff;margin:0 2px;animation:bounce 1.2s infinite}
 .dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
 @keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
-footer{position:relative;z-index:10;padding:12px 28px 16px;border-top:1px solid rgba(0,212,255,0.15);background:rgba(2,12,20,0.92);flex-shrink:0}
+.gen-img{max-width:400px;border-radius:4px;border:1px solid rgba(0,212,255,0.3);margin-top:8px;display:block}
+footer{position:relative;z-index:10;padding:10px 24px 14px;border-top:1px solid rgba(0,212,255,0.15);background:rgba(2,12,20,0.92);flex-shrink:0}
 .ir{display:flex;gap:8px;align-items:center}
 #ti{flex:1;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.22);border-radius:2px;padding:10px 14px;color:#c8eaf5;font-family:'Noto Sans KR',sans-serif;font-size:14px;outline:none}
 #ti:focus{border-color:#00d4ff;box-shadow:0 0 8px rgba(0,212,255,0.3)}
@@ -41,19 +41,20 @@ footer{position:relative;z-index:10;padding:12px 28px 16px;border-top:1px solid 
 .bs.rec{border-color:#ff4466;background:rgba(255,68,102,0.18);color:#ff4466;animation:rp 1s infinite}
 @keyframes rp{0%,100%{box-shadow:0 0 6px rgba(255,68,102,0.4)}50%{box-shadow:0 0 16px rgba(255,68,102,0.8)}}
 .hint{font-family:monospace;font-size:10px;color:rgba(200,234,245,0.25);margin-top:6px;letter-spacing:1px}
-.hdr-btn{padding:5px 12px;border-radius:2px;font-family:monospace;font-size:10px;cursor:pointer;letter-spacing:1px;border:1px solid;transition:all 0.2s}
-.btn-brief{background:rgba(0,255,170,0.1);border-color:rgba(0,255,170,0.3);color:#00ffaa}
-.btn-brief:hover{background:rgba(0,255,170,0.2)}
-.btn-news{background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.3);color:#00d4ff}
-.btn-news:hover{background:rgba(0,212,255,0.2)}
+.hbtn{padding:5px 10px;border-radius:2px;font-family:monospace;font-size:10px;cursor:pointer;letter-spacing:1px;border:1px solid;transition:all 0.2s;white-space:nowrap}
+.hbtn:hover{opacity:0.8}
+.btn-b{background:rgba(0,255,170,0.1);border-color:rgba(0,255,170,0.3);color:#00ffaa}
+.btn-n{background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.3);color:#00d4ff}
+.btn-i{background:rgba(255,170,0,0.1);border-color:rgba(255,170,0,0.3);color:#ffaa00}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">JARVIS<span>JUST A RATHER VERY INTELLIGENT SYSTEM</span></div>
   <div class="sb">
-    <button class="hdr-btn btn-brief" onclick="getBriefing()">📰 브리핑</button>
-    <button class="hdr-btn btn-news" onclick="getNews()">🌐 뉴스</button>
+    <button class="hbtn btn-b" onclick="getBriefing()">📰 브리핑</button>
+    <button class="hbtn btn-n" onclick="getNews()">🌐 뉴스</button>
+    <button class="hbtn btn-i" onclick="promptImage()">🎨 이미지</button>
     <div class="dot"></div>
     <span id="clk">--:--:--</span>
   </div>
@@ -65,57 +66,49 @@ footer{position:relative;z-index:10;padding:12px 28px 16px;border-top:1px solid 
     <button class="bs" onclick="sendText()">➤</button>
     <button class="bs" id="mic" onclick="toggleMic()">🎙</button>
   </div>
-  <div class="hint">ENTER 전송 | 🎙 음성 입력 | "도움말" → 기능 목록</div>
+  <div class="hint">ENTER 전송 | 🎙 음성 입력 | "도움말" → 기능 목록 | "그려줘" → 이미지 생성</div>
 </footer>
+<script src="https://js.puter.com/v2/"></script>
 <script>
 let hist=[],isRec=false,recog=null,userLat=null,userLon=null;
 
-// ElevenLabs 설정 — Vercel 환경변수에서 가져오므로 서버 측에서 처리
-// 프론트엔드에서는 /api/tts 엔드포인트 호출
-const USE_ELEVEN = true;
-
-if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition(p=>{
-    userLat=p.coords.latitude;
-    userLon=p.coords.longitude;
-  });
-}
-
+if(navigator.geolocation){navigator.geolocation.getCurrentPosition(p=>{userLat=p.coords.latitude;userLon=p.coords.longitude;});}
 setInterval(()=>document.getElementById('clk').textContent=new Date().toLocaleTimeString('ko-KR',{hour12:false}),1000);
 
-const HELP_TEXT = `주인님, 제가 할 수 있는 것들입니다:
+const HELP_TEXT=`주인님, 제가 할 수 있는 것들입니다:
 
 🌤 날씨
   "오늘 날씨" / "내일 날씨" / "이번주 날씨"
 
 🌐 실시간 뉴스
-  "최신 뉴스 알려줘" / "경제 뉴스" / "IT 뉴스"
-  상단 🌐 뉴스 버튼으로 바로 보기
+  "최신 뉴스" / "경제 뉴스" / "IT 뉴스"
+  상단 🌐 뉴스 버튼
 
 📰 아침 브리핑
-  "오늘 브리핑 해줘" 또는 상단 📰 브리핑 버튼
-  (날씨 + 실시간 뉴스 + 시장 정보)
+  "브리핑 해줘" 또는 상단 📰 버튼
 
-🔗 웹사이트 자동 열기
-  "유튜브 열어줘" / "네이버 열어줘" / "넷플릭스 열어줘"
-  "인스타그램 열어줘" / "지메일 열어줘" / "쿠팡 열어줘"
+🔗 웹사이트 열기 (자동으로 새 탭)
+  "유튜브 열어줘" / "넷플릭스 열어줘" / "배달의민족 열어줘"
+  모르는 사이트는 구글에서 검색해서 열어드려요
+
+🎨 이미지 생성
+  "고양이 그려줘" / "우주 배경화면 만들어줘"
+  상단 🎨 이미지 버튼
+
+🔊 음성 응답 (ElevenLabs 자연스러운 목소리)
 
 💬 자유 대화
-  지식 질문, 계산, 번역 등 모든 질문
+  지식 질문, 계산, 번역 등`;
 
-🎙 음성 입력
-  🎙 버튼 누르고 말하기`;
-
-function addMsg(r,text){
+function addMsg(r,text,imgUrl){
   const c=document.getElementById('chat'),d=document.createElement('div');
   d.className='msg '+r;
-  let displayText=text;
-  const urlMatch=text.match(/\[OPEN_URL:(https?:\/\/[^\]]+)\]/);
-  if(urlMatch){
-    setTimeout(()=>window.open(urlMatch[1],'_blank'),300);
-    displayText=text.replace(/\[OPEN_URL:[^\]]+\]/,'').trim();
-  }
-  d.innerHTML='<div class="av">'+(r==='jarvis'?'J':'U')+'</div><div><div class="lbl">'+(r==='jarvis'?'JARVIS':'USER')+'</div><div class="bl">'+displayText.replace(/\n/g,'<br>')+'</div></div>';
+  let displayText=text||'';
+  const urlMatch=displayText.match(/\[OPEN_URL:(https?:\/\/[^\]]+)\]/);
+  if(urlMatch){setTimeout(()=>window.open(urlMatch[1],'_blank'),300);displayText=displayText.replace(/\[OPEN_URL:[^\]]+\]/,'').trim();}
+  let imgHtml='';
+  if(imgUrl)imgHtml=`<br><img class="gen-img" src="${imgUrl}" alt="생성된 이미지">`;
+  d.innerHTML=`<div class="av">${r==='jarvis'?'J':'U'}</div><div><div class="lbl">${r==='jarvis'?'JARVIS':'USER'}</div><div class="bl">${displayText.replace(/\n/g,'<br>')}${imgHtml}</div></div>`;
   c.appendChild(d);c.scrollTop=c.scrollHeight;
 }
 
@@ -127,40 +120,64 @@ function addTyping(){
 }
 function rmTyping(){const e=document.getElementById('typ');if(e)e.remove();}
 
+// ElevenLabs TTS via Puter.js (무료)
 async function speak(text){
   const clean=text.replace(/\[OPEN_URL:[^\]]+\]/g,'').replace(/<[^>]+>/g,'').trim();
-  if(!clean)return;
-
-  // ElevenLabs TTS (서버 경유)
-  if(USE_ELEVEN){
-    try{
-      const r=await fetch('/api/tts',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({text:clean})
+  if(!clean||clean.length<2)return;
+  try{
+    // Puter.js ElevenLabs (무료)
+    if(typeof puter!=='undefined'&&puter.ai&&puter.ai.txt2speech){
+      const audio=await puter.ai.txt2speech(clean,{
+        provider:'elevenlabs',
+        voice:'21m00Tcm4TlvDq8ikWAM', // Rachel
+        model:'eleven_multilingual_v2'
       });
-      if(r.ok){
-        const blob=await r.blob();
-        const url=URL.createObjectURL(blob);
-        new Audio(url).play();
-        return;
-      }
-    }catch(e){}
-  }
-
+      audio.play();
+      return;
+    }
+  }catch(e){}
   // 브라우저 TTS 폴백
   if(!window.speechSynthesis)return;
   window.speechSynthesis.cancel();
   const u=new SpeechSynthesisUtterance(clean);
-  u.lang='ko-KR';u.rate=1.05;u.pitch=1;
+  u.lang='ko-KR';u.rate=1.05;
   const koVoice=window.speechSynthesis.getVoices().find(v=>v.lang.startsWith('ko'));
   if(koVoice)u.voice=koVoice;
   window.speechSynthesis.speak(u);
 }
 
+// 이미지 생성 (Claude API via Puter.js)
+async function generateImage(prompt){
+  addMsg('user',`🎨 이미지 생성: ${prompt}`);
+  addTyping();
+  try{
+    if(typeof puter!=='undefined'&&puter.ai&&puter.ai.txt2img){
+      const img=await puter.ai.txt2img(prompt);
+      rmTyping();
+      addMsg('jarvis',`주인님, "${prompt}" 이미지를 생성했습니다.`,img.src||img);
+      speak('이미지를 생성했습니다, 주인님.');
+    } else {
+      rmTyping();
+      addMsg('jarvis','이미지 생성 기능을 사용할 수 없어요. 잠시 후 다시 시도해주세요.');
+    }
+  }catch(e){rmTyping();addMsg('jarvis','이미지 생성 중 오류가 발생했어요: '+e.message);}
+}
+
+function promptImage(){
+  const p=prompt('어떤 이미지를 만들어드릴까요?');
+  if(p&&p.trim())generateImage(p.trim());
+}
+
 async function sendMsg(t){
   if(!t.trim())return;
   if(t.trim()==='도움말'){addMsg('user',t);addMsg('jarvis',HELP_TEXT);speak('도움말을 표시했습니다, 주인님.');return;}
+
+  // 이미지 생성 명령 감지
+  if(/그려줘|그림|이미지|만들어줘|생성해/.test(t)){
+    const prompt=t.replace(/그려줘|그림|이미지|만들어줘|생성해/g,'').trim()||t;
+    return generateImage(prompt);
+  }
+
   addMsg('user',t);addTyping();
   hist.push({role:'user',content:t});
   try{
@@ -188,18 +205,12 @@ async function getBriefing(){
 }
 
 async function getNews(){
-  addMsg('user','최신 뉴스 보여줘');addTyping();
-  hist.push({role:'user',content:'최신 뉴스 알려줘'});
+  addTyping();
   try{
-    const body={message:'최신 뉴스 알려줘',history:hist.slice(0,-1)};
-    if(userLat&&userLon){body.lat=userLat;body.lon=userLon;}
-    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'news'})});
     const d=await r.json();
-    rmTyping();
-    hist.push({role:'assistant',content:d.reply});
-    if(hist.length>20)hist.splice(0,2);
-    addMsg('jarvis',d.reply);speak(d.reply);
-  }catch(e){hist.pop();rmTyping();addMsg('jarvis','뉴스를 가져오는 중 오류가 발생했어요.');}
+    rmTyping();addMsg('jarvis',d.reply);speak('최신 뉴스를 가져왔습니다, 주인님.');
+  }catch(e){rmTyping();addMsg('jarvis','뉴스를 가져오는 중 오류가 발생했어요.');}
 }
 
 function sendText(){const i=document.getElementById('ti');const t=i.value.trim();if(!t)return;i.value='';sendMsg(t);}
@@ -219,9 +230,7 @@ function toggleMic(){
 }
 
 window.speechSynthesis.onvoiceschanged=()=>{};
-window.addEventListener('load',()=>{
-  addMsg('jarvis','안녕하세요, 주인님. 자비스입니다.\n무엇을 도와드릴까요? "도움말"을 입력하시면 할 수 있는 것들을 알려드립니다.');
-});
+window.addEventListener('load',()=>{addMsg('jarvis','안녕하세요, 주인님. 자비스입니다.\n무엇을 도와드릴까요? "도움말"을 입력하시면 할 수 있는 것들을 알려드립니다.');});
 </script>
 </body>
 </html>
